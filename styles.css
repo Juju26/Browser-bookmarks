@@ -1,3 +1,5 @@
+/* index la irukura icons oda style properties */
+
 .container{
     padding-top: 40px;
     background-color: calc(var(--color-primary) - 10%);
@@ -133,4 +135,11 @@
   right: 15px;
   border: 3px solid #f1f1f1;
   z-index: 9;
+}
+
+#ss{
+top: 50px;
+right: 15px;
+position: fixed;
+z-index: 9;
 }

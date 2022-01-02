@@ -1,3 +1,5 @@
+// checking anchor creation . currently not using this script
+
 
 
 // var a = document.createElement('a');

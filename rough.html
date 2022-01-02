@@ -1,3 +1,8 @@
+<!--
+    rough - adding anchor tag from form code matum irukum.
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,9 +34,15 @@
             aTag.setAttribute('href',String(document.getElementById("link").value));
             aTag.setAttribute('class',"fa fa-facebook");
             ptag.innerHTML=String(document.getElementById("link_name").value);
-            mydiv.appendChild(aTag);
-            divname.appendChild(ptag);
+            // mydiv.appendChild(aTag);
+            // divname.appendChild(ptag);
+            // console.log(mydiv);
+            // console.log(divname);
+            document.body.appendChild(aTag);
+            document.body.appendChild(ptag);
             }
+           
+            
         }
             function closeForm() {
         document.getElementById("myForm").style.display = "none";
@@ -40,8 +51,6 @@
     </script>
 </head>
 <body>
-    
-    <br><br>
     <div class="form-popup" id="myForm">
         <form  class="form-container">
           <h1>Add site</h1>

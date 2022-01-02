@@ -5,9 +5,148 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="styles.css">
+
+<style>
+     body {font-family: Arial, Helvetica, sans-serif;}
+     * {box-sizing: border-box;}
+     
+     /* Button used to open the contact form - fixed at the bottom of the page */
+     .open-button {
+       background-color: #555;
+       color: white;
+       padding: 16px 20px;
+       border: none;
+       cursor: pointer;
+       opacity: 0.8;
+       position: fixed;
+       top: 23px;
+       right: 28px;
+       width: 180px;
+     }
+     
+     /* The popup form - hidden by default */
+     .form-popup {
+       display: none;
+       position: fixed;
+       top: 0;
+       right: 15px;
+       border: 3px solid #f1f1f1;
+       z-index: 9;
+     }
+     
+     /* Add styles to the form container */
+     .form-container {
+       max-width: 300px;
+       padding: 10px;
+       background-color: white;
+     }
+     
+     /* Full-width input fields */
+     .form-container input[type=text], .form-container input[type=password] {
+       width: 100%;
+       padding: 15px;
+       margin: 5px 0 22px 0;
+       border: none;
+       background: #f1f1f1;
+     }
+     
+     /* When the inputs get focus, do something */
+     .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+       background-color: #ddd;
+       outline: none;
+     }
+     
+     /* Set a style for the submit/login button */
+     .form-container .btn {
+       background-color: #04AA6D;
+       color: white;
+       padding: 16px 20px;
+       border: none;
+       cursor: pointer;
+       width: 100%;
+       margin-bottom:10px;
+       opacity: 0.8;
+     }
+     
+     /* Add a red background color to the cancel button */
+     .form-container .cancel {
+       background-color: red;
+     }
+     
+     /* Add some hover effects to buttons */
+     .form-container .btn:hover, .open-button:hover {
+       opacity: 1;
+     }
+     </style>
+
 </head>
 <body>
-<div>
+<h1>Bookmarks</h1>
+<button class="open-button" onclick="openForm()">Add + </button>
+
+<div class="form-popup" id="myForm">
+  <form class="form-container">
+    <h1>Add site</h1>
+
+    <label for="Link"><b>Site name</b></label>
+    <input type="text" placeholder="Enter site name" name="site_name" required>
+
+    <label for="site link"><b>Link</b></label>
+    <input type="text" placeholder="Enter Link" name="Link" required>
+
+   <label for="category"><b> Categories </b></label>
+    <select id="category" name="category">
+      <option value="1">Study</option>
+      <option value="2">Social</option>
+      <option value="3">Personal</option>
+      <option value="4">Explore</option>
+      <option value="5">Others</option>
+    </select>
+    <br> <br>
+    <button type="submit" class="btn" onclick="create()">Add</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function create(){ 
+            // let anchor=document.createElement("a");
+            // anchor.href="https://google.com";
+            // console.log(anchor)
+            // let to_add=document.getElementById("ss");
+            // to_add.appendChild(anchor)
+            // console.log(to_add)
+            if (document.getElementById("link").value==" " || document.getElementById("link_name").value==" " ){
+                console.alert("Please enter a link and a name");
+            }
+            else{
+            var mydiv = document.getElementById("ss");
+            var aTag = document.createElement('a');
+            aTag.setAttribute('href',String(document.getElementById("link").value));
+            aTag.setAttribute('class',"fa fa-facebook");
+            mydiv.appendChild(aTag);
+          console.log(aTag);
+          console.log(mydiv);
+            }
+        }
+function create_a() {
+var a = document.createElement('a');
+var linkText = document.createTextNode(String(document.getElementById("site_name").value));
+a.appendChild(linkText);
+a.title = document.getElementsByName("site_name").values;
+a.href = document.getElementsByName("Link").values;
+document.body.appendChild(a);
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
 <div class="container" name="container">
 
 <h2>Social Media</h2>
@@ -32,10 +171,12 @@
 <a href="#" class="fa fa-yahoo"></a>
 <a href="#" class="fa fa-reddit"></a>
 <a href="#" class="fa fa-rss"></a>
-     </div> </div>
+<div id="ss">
+     <p>hi unga irken</p>
+ </div>     
 
-<div>
+</div> 
+
      
-</div>
 </body>
 </html> 
