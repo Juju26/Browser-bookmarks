@@ -2,7 +2,6 @@
     rough - adding anchor tag from form code matum irukum.
 -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,24 +22,21 @@
             // let to_add=document.getElementById("ss");
             // to_add.appendChild(anchor)
             // console.log(to_add)
-            if (document.getElementById("link").value==" " || document.getElementById("link_name").value==" " ){
-                console.alert("Please enter a link and a name");
-            }
-            else{
+            
             var mydiv = document.getElementById("icon");
-            var divname=document.getElementById("icon_name");
+            //var divname=document.getElementById("icon_name");
             var aTag = document.createElement('a');
-            var ptag=document.createElement('p');
+            //var ptag=document.createElement('p');
             aTag.setAttribute('href',String(document.getElementById("link").value));
             aTag.setAttribute('class',"fa fa-facebook");
-            ptag.innerHTML=String(document.getElementById("link_name").value);
+           // ptag.innerHTML=document.getElementById("link_name").value;
             // mydiv.appendChild(aTag);
             // divname.appendChild(ptag);
             // console.log(mydiv);
             // console.log(divname);
             document.body.appendChild(aTag);
-            document.body.appendChild(ptag);
-            }
+            //document.body.appendChild(ptag);
+           
            
             
         }
@@ -55,9 +51,9 @@
         <form  class="form-container">
           <h1>Add site</h1>
       
-          <label for="Link"><b>Site name</b></label>
+          <!-- <label for="Link"><b>Site name</b></label>
           <input type="text" placeholder="Enter site name" id="link_name" name="site_name" required>
-      
+       -->
           <label for="site link"><b>Link</b></label>
           <input type="text" placeholder="Enter Link" id="link" name="Link" required>
       
@@ -76,6 +72,7 @@
       </div>
       
     <div id="ss">
+        <p>hi hello</p>
         <div id="icon"></div>
         <br><div id="icon_name"></div>
     </div>

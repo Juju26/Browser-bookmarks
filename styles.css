@@ -138,8 +138,14 @@
 }
 
 #ss{
-top: 50px;
-right: 15px;
+top: 150px;
+left: 15px;
 position: fixed;
 z-index: 9;
+}
+
+#ss:icon{
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
 }

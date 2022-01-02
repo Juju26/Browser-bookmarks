@@ -79,6 +79,46 @@
      }
      </style>
 
+     
+<script>
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function create(){ 
+              // let anchor=document.createElement("a");
+              // anchor.href="https://google.com";
+              // console.log(anchor)
+              // let to_add=document.getElementById("ss");
+              // to_add.appendChild(anchor)
+              // console.log(to_add)
+              if (document.getElementById("link").value==" " || document.getElementById("link_name").value==" " ){
+                  console.alert("Please enter a link and a name");
+              }
+              else{
+              var mydiv = document.getElementById("ss");
+              var aTag = document.createElement('a');
+              aTag.setAttribute('href',String(document.getElementById("link").value));
+              aTag.setAttribute('class',"fa fa-facebook");
+              mydiv.appendChild(aTag);
+            console.log(aTag);
+            console.log(mydiv);
+              }
+          }
+  function create_a() {
+  var a = document.createElement('a');
+  var linkText = document.createTextNode(String(document.getElementById("site_name").value));
+  a.appendChild(linkText);
+  a.title = document.getElementsByName("site_name").values;
+  a.href = document.getElementsByName("Link").values;
+  document.body.appendChild(a);
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+  </script>
+
 </head>
 <body>
 <h1>Bookmarks</h1>
@@ -108,44 +148,6 @@
   </form>
 </div>
 
-<script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function create(){ 
-            // let anchor=document.createElement("a");
-            // anchor.href="https://google.com";
-            // console.log(anchor)
-            // let to_add=document.getElementById("ss");
-            // to_add.appendChild(anchor)
-            // console.log(to_add)
-            if (document.getElementById("link").value==" " || document.getElementById("link_name").value==" " ){
-                console.alert("Please enter a link and a name");
-            }
-            else{
-            var mydiv = document.getElementById("ss");
-            var aTag = document.createElement('a');
-            aTag.setAttribute('href',String(document.getElementById("link").value));
-            aTag.setAttribute('class',"fa fa-facebook");
-            mydiv.appendChild(aTag);
-          console.log(aTag);
-          console.log(mydiv);
-            }
-        }
-function create_a() {
-var a = document.createElement('a');
-var linkText = document.createTextNode(String(document.getElementById("site_name").value));
-a.appendChild(linkText);
-a.title = document.getElementsByName("site_name").values;
-a.href = document.getElementsByName("Link").values;
-document.body.appendChild(a);
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-</script>
 
 <div class="container" name="container">
 
@@ -153,7 +155,7 @@ function closeForm() {
 
 <!-- Add font awesome icons -->
 
-<a href="#" class="fa fa-facebook"></a>
+<div><a href="#" class="fa fa-facebook"></a>
 
 <a href="#" class="fa fa-linkedin"></a>
 <a href="#" class="fa fa-youtube"></a>
@@ -174,9 +176,7 @@ function closeForm() {
 <div id="ss">
      <p>hi unga irken</p>
  </div>     
-
-</div> 
-
-     
+</div> </div>
+    
 </body>
 </html> 
